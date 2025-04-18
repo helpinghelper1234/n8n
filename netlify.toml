@@ -3,9 +3,9 @@
   # Should be the root of the frontend package.
   base = "packages/frontend/editor-ui"
 
-  # Publish directory: Directory (relative to the root of your repo) that contains the deploy-ready assets.
-  # Vite's default output is 'dist'.
-  publish = "packages/frontend/editor-ui/dist"
+  # Publish directory: Directory (relative to the 'base' directory) that contains the deploy-ready assets.
+  # Vite's default output is 'dist', created inside the 'base' directory.
+  publish = "dist"
 
   # Build command: Command to run to build your site.
   # We need to install dependencies first using pnpm (assuming it's installed globally or via Netlify build image) 
