@@ -8,8 +8,7 @@
   publish = "dist"
 
   # Build command: Command to run to build your site.
-  # We need to install dependencies first using pnpm (assuming it's installed globally or via Netlify build image) 
-  # then run the build script from the package.json.
-  # Note: The VUE_APP_PUBLIC_PATH might need adjustment depending on how the backend is hosted.
-  # Note: We install dependencies from the root to handle the pnpm workspace.
-  command = "pnpm install --frozen-lockfile && pnpm build" 
+  # Install dependencies from the root first, then run the build script.
+  # Removed VUE_APP_PUBLIC_PATH as Vite should handle base path automatically for root deployment.
+  # NODE_OPTIONS might still be needed for memory.
+  command = "pnpm install --frozen-lockfile && cross-env NODE_OPTIONS=\" --max-old-space-size=8192\" pnpm build" 
